@@ -16,10 +16,32 @@
             padding: 0;
             overflow-x: hidden;
         }
+        #overlay{
+            opacity: 1;
+            background: url('./assets/webbdeepfield-new.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #myheading{
+            opacity: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: white;
+            transform: translate(-50%,-25%);
+        }
+        #mycontent{
+            opacity:0;
+        }
     </style>
 </head>
 <body>
-    <canvas id="mycanvas"></canvas>
+    <div id="overlay">
+        <h1 id="myheading">Loading Solar System...</h1>
+        <div id="mycontent">
+            <canvas id="mycanvas"></canvas>
+        </div>
+    </div>
     <script src="./main.js" type="module"></script>
 </body>
 </html>
