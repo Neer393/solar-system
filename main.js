@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import sunmap from './assets/sunmap.jpg';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
 //sizes
@@ -26,7 +27,7 @@ const textureloader = new THREE.TextureLoader();
 //Sun
 const sungeometry = new THREE.SphereGeometry(16,30,30);
 const sunmaterial = new THREE.MeshBasicMaterial({
-    map: textureloader.setPath('./').load('sunmap.jpg')
+    map: textureloader.load(sunmap)
 })
 const sun = new THREE.Mesh(sungeometry,sunmaterial);
 scene.add(sun);
