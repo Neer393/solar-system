@@ -228,3 +228,9 @@ window.addEventListener('resize',()=>{
     camera.updateProjectionMatrix();
     renderer.setSize(sizes.width,sizes.height);
 })
+
+window.addEventListener('load',()=>{
+    console.log("Loaded...");
+    document.getElementById("myheading").style.opacity = 0;
+    document.getElementById("mycontent").style.opacity = 1;
+})
