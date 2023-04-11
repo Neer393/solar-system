@@ -1,5 +1,18 @@
 import * as THREE from 'three';
 import sunmap from './assets/sunmap.jpg';
+import mercurymap from './assets/mercury.jpg';
+import venusmap from './assets/venus.jpg';
+import earthmap from './assets/earth.jpg';
+import moonmap from './assets/moon.jpg';
+import marsmap from './assets/mars.jpg';
+import jupitermap from './assets/jupiter.jpg';
+import saturnmap from './assets/saturn.jpg';
+import saturnringmap from './assets/saturn-ring.png';
+import uranusmap from './assets/uranus.jpg';
+import uranusringmap from './assets/uranus-ring.png';
+import neptunemap from './assets/neptune.jpg';
+import plutomap from './assets/pluto.jpg';
+import spacemap from './assets/webbdeepfield-new.jpg';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
 //sizes
@@ -36,7 +49,7 @@ scene.add(sun);
 const mercuryobj = new THREE.Object3D();
 const mercurygeometry = new THREE.SphereGeometry(3.2,30,30);
 const mercurymaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('mercury.jpg')
+    map: textureloader.load(mercurymap)
 })
 const mercury = new THREE.Mesh(mercurygeometry,mercurymaterial);
 mercuryobj.add(mercury);
@@ -47,7 +60,7 @@ mercury.position.x = 28;
 const venusobj = new THREE.Object3D();
 const venusgeometry = new THREE.SphereGeometry(5.8,30,30);
 const venusmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('venus.jpg')
+    map: textureloader.load(venusmap)
 })
 const venus = new THREE.Mesh(venusgeometry,venusmaterial);
 venusobj.add(venus);
@@ -58,7 +71,7 @@ venus.position.x = -44;
 const earthobj = new THREE.Object3D();
 const earthgeometry = new THREE.SphereGeometry(6,30,30);
 const earthmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('earth.jpg')
+    map: textureloader.load(earthmap)
 })
 const earth = new THREE.Mesh(earthgeometry,earthmaterial);
 earthobj.add(earth);
@@ -68,7 +81,7 @@ earth.position.z = 62;
 const moonobj = new THREE.Object3D();
 const moongeometry = new THREE.SphereGeometry(1.7,30,30);
 const moonmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('moon.jpg')
+    map: textureloader.load(moonmap)
 })
 const moon = new THREE.Mesh(moongeometry,moonmaterial);
 moonobj.add(moon);
@@ -80,7 +93,7 @@ scene.add(earthobj);
 const marsobj = new THREE.Object3D();
 const marsgeometry = new THREE.SphereGeometry(4,30,30);
 const marsmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('mars.jpg')
+    map: textureloader.load(marsmap)
 })
 const mars = new THREE.Mesh(marsgeometry,marsmaterial);
 marsobj.add(mars);
@@ -91,7 +104,7 @@ mars.position.z = -85;
 const jupiterobj = new THREE.Object3D();
 const jupitergeometry = new THREE.SphereGeometry(12,30,30);
 const jupitermaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('jupiter.jpg')
+    map: textureloader.load(jupitermap)
 })
 const jupiter = new THREE.Mesh(jupitergeometry,jupitermaterial);
 jupiterobj.add(jupiter);
@@ -103,10 +116,10 @@ const saturnobj = new THREE.Object3D();
 const saturngeometry = new THREE.SphereGeometry(10,30,30);
 const saturnringgeometry = new THREE.RingGeometry(10,20,32);
 const saturnmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('saturn.jpg')
+    map: textureloader.load(saturnmap)
 })
 const saturnringmaterial = new THREE.MeshBasicMaterial({
-    map: textureloader.setPath('./assets/').load('saturn-ring.png'),
+    map: textureloader.load(saturnringmap),
     side: THREE.DoubleSide
 })
 const saturn = new THREE.Mesh(saturngeometry,saturnmaterial);
@@ -123,10 +136,10 @@ const uranusobj = new THREE.Object3D();
 const uranusgeometry = new THREE.SphereGeometry(7,30,30);
 const uranusringgeometry = new THREE.RingGeometry(7,12,32);
 const uranusmaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('uranus.jpg')
+    map: textureloader.load(uranusmap)
 })
 const uranusringmaterial = new THREE.MeshBasicMaterial({
-    map: textureloader.setPath('./assets/').load('uranus-ring.png'),
+    map: textureloader.load(uranusringmap),
     side: THREE.DoubleSide
 })
 const uranus = new THREE.Mesh(uranusgeometry,uranusmaterial);
@@ -142,7 +155,7 @@ scene.add(uranusobj);
 const neptuneobj = new THREE.Object3D();
 const neptunegeometry = new THREE.SphereGeometry(7,30,30);
 const neptunematerial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('neptune.jpg')
+    map: textureloader.load(neptunemap)
 })
 const neptune = new THREE.Mesh(neptunegeometry,neptunematerial);
 neptuneobj.add(neptune);
@@ -153,7 +166,7 @@ neptune.position.x = 207;
 const plutoobj = new THREE.Object3D();
 const plutogeometry = new THREE.SphereGeometry(2.8,30,30);
 const plutomaterial = new THREE.MeshStandardMaterial({
-    map: textureloader.setPath('./assets/').load('pluto.jpg')
+    map: textureloader.load(plutomap)
 })
 const pluto = new THREE.Mesh(plutogeometry,plutomaterial);
 plutoobj.add(pluto);
@@ -168,13 +181,13 @@ const sunlight = new THREE.PointLight(0xFFFFFF,2,300);
 scene.add(sunlight);
 
 const cubetextureloader = new THREE.CubeTextureLoader();
-scene.background = cubetextureloader.setPath('./assets/').load([
-    'webbdeepfield-new.jpg',
-    'webbdeepfield-new.jpg',
-    'webbdeepfield-new.jpg',
-    'webbdeepfield-new.jpg',
-    'webbdeepfield-new.jpg',
-    'webbdeepfield-new.jpg'
+scene.background = cubetextureloader.load([
+    spacemap,
+    spacemap,
+    spacemap,
+    spacemap,
+    spacemap,
+    spacemap
 ])
 
 function animate(){
