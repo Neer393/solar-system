@@ -26,7 +26,7 @@ const textureloader = new THREE.TextureLoader();
 //Sun
 const sungeometry = new THREE.SphereGeometry(16,30,30);
 const sunmaterial = new THREE.MeshBasicMaterial({
-    map: textureloader.setPath('./assets/').load('sunmap.jpg')
+    map: textureloader.setPath('./').load('sunmap.jpg')
 })
 const sun = new THREE.Mesh(sungeometry,sunmaterial);
 scene.add(sun);
